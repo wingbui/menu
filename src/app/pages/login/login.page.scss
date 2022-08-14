@@ -1,0 +1,33 @@
+ion-avatar {
+  height: 20vh;
+  width: 20vh;
+  margin: 5vh auto;
+}
+
+.eye-icon {
+  cursor: pointer;
+}
+
+form {
+  margin: 0 5vw;
+}
+
+ion-input {
+  --placeholder-font-style: italic;
+}
+
+.forget-pw {
+  display: block;
+  text-align: right;
+  margin: 0.5rem 0;
+}
+
+.sign-up {
+  display: block;
+  text-align: center;
+  margin: 0.5rem 0;
+}
+
+a {
+  text-decoration: none;
+}

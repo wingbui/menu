@@ -1,0 +1,67 @@
+<ion-content>
+  <ion-avatar>
+    <ion-img src="assets/images/logo.jpeg"></ion-img>
+  </ion-avatar>
+
+  <form #f="ngForm" (ngSubmit)="onSubmit(f)">
+    <ion-list lines="none">
+      <div>
+        <ion-item>
+          <ion-icon name="mail" slot="start" color="primary"></ion-icon>
+          <ion-input
+            type="email"
+            name="email"
+            ngModel
+            #emailCtrl="ngModel"
+            placeholder="Email"
+            required
+          ></ion-input>
+        </ion-item>
+        <ion-text
+          color="danger"
+          *ngIf="emailCtrl.errors?.required && emailCtrl.touched"
+          class="ion-text-center"
+        >
+          <p>Email is required</p>
+        </ion-text>
+      </div>
+
+      <ion-item>
+        <ion-icon name="key" slot="start" color="primary"></ion-icon>
+        <ion-icon
+          class="eye-icon"
+          [name]="iconName"
+          (click)="changeType()"
+          slot="end"
+          color="primary"
+        ></ion-icon>
+        <ion-input
+          class="text-input"
+          [type]="type"
+          name="password"
+          ngModel
+          #passwordCtrl="ngModel"
+          placeholder="Password"
+          required
+        >
+        </ion-input>
+      </ion-item>
+      <ion-text
+        color="danger"
+        *ngIf="passwordCtrl.errors?.required && passwordCtrl.touched"
+        class="ion-text-center"
+      >
+        <p>Password is required</p>
+      </ion-text>
+
+      <small class="forget-pw"> Forget password? </small>
+    </ion-list>
+
+    <div class="ion-margin-top">
+      <ion-button expand="block" shape="round" type="submit">LOGIN</ion-button>
+    </div>
+    <small class="sign-up">
+      Do not have an account? <a routerLink="/register">Sign up</a>
+    </small>
+  </form>
+</ion-content>
